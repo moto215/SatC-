@@ -2,11 +2,15 @@
 //
 
 #include <stdio.h>
+#include "calc.h"
 
 int main()
 {
 	int leftNum;
 	int rightNum;
+	int anser;
+
+	bool error = false;
 
 	char enzann;
 	char retryText;
@@ -22,49 +26,29 @@ int main()
 		printf("整数を入力してください\n");
 		scanf_s("%d", &rightNum);
 
-		switch (enzann)
-		{
-		case '+':
-			printf("%d\n", leftNum + rightNum);
-			break;
-		case '-':
-			printf("%d\n", leftNum - rightNum);
-			break;
-		case '*':
-			printf("%d\n", leftNum * rightNum);
-			break;
-		case '/':
-			if (leftNum == 0 || rightNum == 0)
-			{
-				printf("0を割ることはできません\n");
-			}
-			else
-			{
-				printf("%d\n", leftNum / rightNum);
-			}
-			break;
-		default:
-			printf("+ - * / のいずれかの演算子を入力してください\n");
-			break;
-		}
+		error = Operator(enzann, leftNum, rightNum);
 
-		printf("もう一度計算する場合はyを、しない場合はその他キーを押してください\n");
-		scanf_s(" %c", &retryText);
-		if (retryText == 'y')
+		if (error)
 		{
-			printf("もう一度計算します\n\n");
+			// skipする
 		}
 		else
 		{
-			printf("終了します\n");
+			anser = Operator(enzann, leftNum, rightNum);
+			printf("計算結果 %d\n", anser);
+		}
+
+		printf("もう一度計算する場合はyを、しない場合はその他キーを入力したください\n");
+		scanf_s(" %c", &retryText);
+		if (retryText == 'y')
+		{
+			printf("もう一度計算を行います\n");
+		}
+		else
+		{
 			break;
 		}
 	}
-	return 0;
-}
 
-int Plus(int leftNum, int rightNum)
-{
-	printf("%d\n", leftNum + rightNum);
-	return;
+	return 0;
 }

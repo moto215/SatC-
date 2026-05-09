@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{630e7da7-6c55-48cc-a35c-32cbacfcf851}</ProjectGuid>
-    <RootNamespace>ConsoleApplication5</RootNamespace>
+    <ProjectGuid>{021d0316-babb-41bf-bd71-c0483ba24007}</ProjectGuid>
+    <RootNamespace>ConsoleApplication7</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -93,8 +93,6 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -121,17 +119,17 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="calc.cpp" />
-    <ClCompile Include="ConsoleApplication5.cpp" />
+    <ClCompile Include="coin.cpp" />
+    <ClCompile Include="ConsoleApplication7.cpp" />
+    <ClCompile Include="summary.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="calc.h" />
+    <ClInclude Include="coin.h" />
+    <ClInclude Include="summary.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
