@@ -2,81 +2,68 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdlib.h>
+
+int random() 
+{
+	// 0から100の整数で乱数を生成
+	int num = rand() % 101;
+	return num;
+}
 
 int main()
 {
-	// コンピューターの時間を変数に代入する
-	int t = (int)time(nullptr);
+	// 乱数のシードを初期化
+	srand(static_cast<unsigned int>(time(0)));
 
-	int rank = 0;
+	int a = random();
+	int b = random();
+	int c = random();
+	int d = random();
+	int e = random();
 
-	int answer = t % 10;
+	float total = (float)a + (float)b + (float)c + (float)d + (float)e;
 
-	int input;
+	float average = total / 5;
 
-	bool gameClear = false;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	printf("%d\n", c);
+	printf("%d\n", d);
+	printf("%d\n", e);
+	printf("%.1f\n", total);
+	printf("%.1f\n", average);
 
-	int life = 3;
+	bool ave = false;
+	bool score = false;
 
-	while (!gameClear)
+	if (average >= 60) 
 	{
-		printf("残りライフ%d\n",life);
-		printf("0～9の数字を入力してください\n");
-		scanf_s("%d", &input);
+		ave = true;
+	}
+	if (a > 39 && b > 39 && c > 39 && d > 39 && e > 39)
+	{
+		score = true;
+	}
 
-		if (input == answer)
+	if (ave) 
+	{
+		if (score)
 		{
-			rank = 2;
-			printf("一致!\n");
-		}
-		else if (answer < input)
-		{
-			printf("大きい!\n");
-		}
-		else if (answer > input)
-		{
-			printf("小さい!\n");
-		}
-
-		int sub = answer - input;
-		if (sub > -3 && sub < 3 && answer != input)
-		{
-			rank = 1;
-			printf("惜しい!\n");
-		}
-
-		switch (rank)
-		{
-		case 2:
-			printf("ランクS\n");
-			gameClear = true;
-			break;
-		case 1:
-			printf("ランクA\n");
-			break;
-		default:
-			printf("ランクB\n");
-			break;
-		}
-
-		if (gameClear)
-		{
-			printf("クリア\n");
+			printf("合格\n");
 		}
 		else
 		{
-			printf("もう一回\n\n");
-			life--;
-		}
-
-		if (life <= 0) 
-		{
-			printf("ゲームオーバー\n");
-			gameClear = true;
+			printf("40点未満の教科があった為不合格です");
 		}
 	}
-
-	return 0;
+	else if(score)
+	{
+		printf("平均点が60未満なので不合格です\n");
+	}
+	else
+	{
+		printf("平均点が60未満かつ40点未満の教科があった為不合格です\n");
+	}
 }
