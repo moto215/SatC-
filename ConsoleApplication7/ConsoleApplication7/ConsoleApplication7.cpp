@@ -16,9 +16,6 @@ int main()
     int fiveCoin;
     int oneCoin;
 
-    int totalRepeat = 0;
-    int totalCoin = 0;
-
     char choose;
 
     while (true)
@@ -26,7 +23,8 @@ int main()
         printf("1以上の整数を入力してください\n");
         scanf_s("%d", &yen);
 
-        total(yen);
+        // 両替回数と合計金額を計算する
+        summary(yen);
 
         fhCoin = fhCoinSort(yen);
         ohCoin = ohCoinSort(yen);
@@ -45,8 +43,6 @@ int main()
         }
         else break;
     }
-
-    printf("合計両替回数は%dで、合計金額は%d円でした。\n", totalRepeat, totalCoin);
-
+    total();
     return 0;
 }

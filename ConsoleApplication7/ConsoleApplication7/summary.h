@@ -1,3 +1,4 @@
 #pragma once
 
-void total(int);
+void summary(int);
+void total();
