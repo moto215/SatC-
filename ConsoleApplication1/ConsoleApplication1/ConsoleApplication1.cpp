@@ -3,23 +3,33 @@
 
 #include <stdio.h>
 
-void agePrint(int age) {
-    printf("年齢は %d です\n", age);
-}
+struct Parameter
+{
+    char name;
+    int hp;
+    int attack;
+    int defense;
+};
+
+void DispParameter(Parameter);
 
 int main()
 {
-    int ages[4] = {
-        15,
-        32,
-        11,
-        48,
-    };
+    Parameter playerA_param = { 'A', 20, 5, 10 };
+    Parameter playerB_param = { 'B', 10, 20, 5 };
 
-    for (int i = 0; i < 4; i++)
-    {
-        agePrint(ages[i]);
-    }
+    DispParameter(playerA_param);
+    DispParameter(playerB_param);
 
     return 0;
+}
+
+void DispParameter(Parameter param) 
+{
+    printf("------------------\n");
+    printf("名前：%c\n", param.name);
+    printf("HP：%d\n", param.hp);
+    printf("攻撃力：%d\n", param.attack);
+    printf("防御力：%d\n", param.defense);
+    printf("------------------\n");
 }
