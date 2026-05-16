@@ -2,53 +2,25 @@
 //
 
 #include <stdio.h>
-#include "calc.h"
 
 int main()
 {
-	int leftNum;
-	int rightNum;
-	int anser;
 
-	bool error = false;
+	char text[27];
 
-	char enzann;
-	char retryText;
-
-	while (true)
+	for (int i = 0; i < 27; i++) 
 	{
-		printf("整数を入力してください\n");
-		scanf_s("%d", &leftNum);
-
-		printf("演算子を入力してください\n");
-		scanf_s(" %c", &enzann);
-
-		printf("整数を入力してください\n");
-		scanf_s("%d", &rightNum);
-
-		error = Operator(enzann, leftNum, rightNum);
-
-		if (error)
+		if (i == 26)
 		{
-			// skipする
+			text[i] = '\0';
 		}
 		else
 		{
-			anser = Operator(enzann, leftNum, rightNum);
-			printf("計算結果 %d\n", anser);
-		}
-
-		printf("もう一度計算する場合はyを、しない場合はその他キーを入力したください\n");
-		scanf_s(" %c", &retryText);
-		if (retryText == 'y')
-		{
-			printf("もう一度計算を行います\n");
-		}
-		else
-		{
-			break;
+			text[i] = i + 97;
 		}
 	}
+
+	printf("%s\n", text);
 
 	return 0;
 }
