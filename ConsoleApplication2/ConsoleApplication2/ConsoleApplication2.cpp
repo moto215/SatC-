@@ -5,61 +5,25 @@
 
 int main()
 {
-	int leftNum;
-	int rightNum;
+	int maxNum = 0;
 
-	char enzann;
-	char retryText;
+	int num[5] = {
+		4,
+		2,
+		5,
+		1,
+		3,
+	};
 
-	while (true)
+	for (int i = 0; i < 5; i++)
 	{
-		printf("整数を入力してください\n");
-		scanf_s("%d", &leftNum);
-
-		printf("演算子を入力してください\n");
-		scanf_s(" %c", &enzann);
-
-		printf("整数を入力してください\n");
-		scanf_s("%d", &rightNum);
-
-		switch (enzann)
+		if (maxNum < num[i])
 		{
-		case '+':
-			printf("%d\n", leftNum + rightNum);
-			break;
-		case '-':
-			printf("%d\n", leftNum - rightNum);
-			break;
-		case '*':
-			printf("%d\n", leftNum * rightNum);
-			break;
-		case '/':
-			if (leftNum == 0 || rightNum == 0)
-			{
-				printf("0を割ることはできません\n");
-			}
-			else
-			{
-				printf("%d\n", leftNum / rightNum);
-			}
-			break;
-		default:
-			printf("+ - * / のいずれかの演算子を入力してください\n");
-			break;
-		}
-		
-		printf("もう一度計算する場合はyを、しない場合はその他キーを押してください\n");
-		scanf_s(" %c", &retryText);
-		if (retryText == 'y')
-		{
-			printf("もう一度計算します\n\n");
-		}
-		else
-		{
-			printf("終了します\n");
-			break;
+			maxNum = num[i];
 		}
 	}
+
+	printf("最大値は %d です", maxNum);
 
 	return 0;
 }
