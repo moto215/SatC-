@@ -2,28 +2,24 @@
 //
 
 #include <stdio.h>
+#include "Calc.h"
 
 int main()
 {
-	int maxNum = 0;
 
-	int num[5] = {
-		4,
-		2,
-		5,
-		1,
-		3,
+	Student studentData[5] =
+	{
+		{'A',10},
+		{'B',20},
+		{'C',30},
+		{'D',40},
+		{'E',50},
 	};
 
 	for (int i = 0; i < 5; i++)
 	{
-		if (maxNum < num[i])
-		{
-			maxNum = num[i];
-		}
+		scoreCalc(studentData[i]);
 	}
-
-	printf("最大値は %d です", maxNum);
 
 	return 0;
 }
