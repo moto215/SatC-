@@ -8,6 +8,6 @@ int main()
 {
 	Character chara1;
 	Character chara2;
-	chara1.printStatus("キャラ1", 1, 8);
-	chara2.printStatus("キャラ2", 5, 2);
+	chara1.StatusUpdata("キャラ1", 1, 8);
+	chara2.StatusUpdata("キャラ2", 5, 2);
 }

@@ -9,5 +9,7 @@ private:
 	int hp_;
 	int attack_;
 public:
-	void printStatus(const char* name, int hp, int attack);
+	void StatusUpdata(const char* name, int hp, int attack);
+
+	void printStatus();
 };
