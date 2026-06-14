@@ -19,4 +19,6 @@ int main()
 	std::cout << num3 << std::endl;
 	num4 = add(1, 2, 3);
 	std::cout << num4 << std::endl;
+
+	return 0;
 }
